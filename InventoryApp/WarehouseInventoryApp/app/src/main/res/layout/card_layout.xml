@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    app:cardBackgroundColor="#6FAF4C"
+    app:cardCornerRadius="15dp"
+    app:contentPadding="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/quantityCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/itemNameCard"
+            app:layout_constraintTop_toBottomOf="@id/itemNameCard" />
+
+        <TextView
+            android:id="@+id/itemNameCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@id/frozenLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/descriptionCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/costCard"
+            app:layout_constraintTop_toBottomOf="@id/costCard" />
+
+        <TextView
+            android:id="@+id/frozenCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/descriptionCard"
+            app:layout_constraintTop_toBottomOf="@id/descriptionCard" />
+
+        <TextView
+            android:id="@+id/costCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/quantityCard"
+            app:layout_constraintTop_toBottomOf="@id/quantityCard" />
+
+        <TextView
+            android:id="@+id/itemNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_name"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/quantityLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/quantityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantity"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/costLabel"
+            app:layout_constraintTop_toBottomOf="@id/itemNameLabel" />
+
+        <TextView
+            android:id="@+id/costLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cost"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/descriptionLabel"
+            app:layout_constraintTop_toBottomOf="@id/quantityLabel" />
+
+        <TextView
+            android:id="@+id/descriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="@+id/frozenLabel"
+            app:layout_constraintTop_toBottomOf="@id/costLabel" />
+
+        <TextView
+            android:id="@+id/frozenLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:text="@string/frozen_item"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@id/frozenCard"
+            app:layout_constraintTop_toBottomOf="@id/descriptionLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

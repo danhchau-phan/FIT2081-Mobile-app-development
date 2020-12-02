@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="@string/toolbar_title" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/buttonMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ToggleButton
+                android:id="@+id/FrozenItemBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:padding="0dp"
+                android:textOff="@string/frozen_item_unchecked"
+                android:textOn="@string/frozen_item_checked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHeight_max="wrap"
+                app:layout_constraintStart_toStartOf="@+id/FrozenItemTv"
+                app:layout_constraintTop_toBottomOf="@+id/FrozenItemTv" />
+
+            <TextView
+                android:id="@+id/ItemNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:text="@string/item_name"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="none"
+                app:layout_constraintBottom_toTopOf="@+id/itemNamePt"
+                app:layout_constraintHeight_percent="0.04"
+                app:layout_constraintStart_toStartOf="@id/leftMargin"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="spread"
+                tools:layout_constraintHeight_percent="0.05"
+                tools:layout_constraintStart_toStartOf="@id/leftMargin"
+                tools:layout_constraintTop_toBottomOf="@id/topMargin" />
+
+            <EditText
+                android:id="@+id/itemNamePt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:cursorVisible="true"
+                android:ems="8"
+                android:hint="@string/blank"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/QuantityTv"
+                app:layout_constraintEnd_toEndOf="@id/rightMargin"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@id/ItemNameTv"
+                app:layout_constraintTop_toBottomOf="@+id/ItemNameTv"
+                tools:layout_constrainedHeight="true" />
+
+            <TextView
+                android:id="@+id/QuantityTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:ems="15"
+                android:text="@string/quantity"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="none"
+                app:layout_constraintBottom_toTopOf="@+id/QuantityPt"
+                app:layout_constraintHeight_percent="0.04"
+                app:layout_constraintStart_toStartOf="@+id/itemNamePt"
+                app:layout_constraintTop_toBottomOf="@+id/itemNamePt" />
+
+            <EditText
+                android:id="@+id/QuantityPt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="8"
+                android:hint="@string/blank"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                app:layout_constraintBottom_toTopOf="@+id/CostTv"
+                app:layout_constraintEnd_toEndOf="@id/rightMargin"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/QuantityTv"
+                app:layout_constraintTop_toBottomOf="@+id/QuantityTv" />
+
+            <TextView
+                android:id="@+id/CostTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:ems="15"
+                android:text="@string/cost"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="none"
+                app:layout_constraintBottom_toTopOf="@+id/CostPt"
+                app:layout_constraintHeight_percent="0.04"
+                app:layout_constraintStart_toStartOf="@+id/QuantityPt"
+                app:layout_constraintTop_toBottomOf="@+id/QuantityPt" />
+
+            <EditText
+                android:id="@+id/CostPt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/blank"
+                android:importantForAutofill="no"
+                android:inputType="numberDecimal"
+                app:layout_constraintBottom_toTopOf="@+id/DescriptionTv"
+                app:layout_constraintEnd_toEndOf="@id/rightMargin"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/CostTv"
+                app:layout_constraintTop_toBottomOf="@+id/CostTv" />
+
+            <TextView
+                android:id="@+id/DescriptionTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:ems="15"
+                android:text="@string/description"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="none"
+                app:layout_constraintBottom_toTopOf="@+id/DescriptionPt"
+                app:layout_constraintHeight_percent="0.04"
+                app:layout_constraintStart_toStartOf="@+id/CostPt"
+                app:layout_constraintTop_toBottomOf="@+id/CostPt" />
+
+            <EditText
+                android:id="@+id/DescriptionPt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="8"
+                android:gravity="start|top"
+                android:hint="@string/blank"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                app:layout_constraintBottom_toTopOf="@+id/FrozenItemTv"
+                app:layout_constraintEnd_toEndOf="@id/rightMargin"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/DescriptionTv"
+                app:layout_constraintTop_toBottomOf="@+id/DescriptionTv" />
+
+            <TextView
+                android:id="@+id/FrozenItemTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:ems="15"
+                android:text="@string/frozen_item"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="none"
+                app:layout_constraintBottom_toTopOf="@+id/FrozenItemBtn"
+                app:layout_constraintHeight_percent="0.04"
+                app:layout_constraintStart_toStartOf="@+id/DescriptionPt"
+                app:layout_constraintTop_toBottomOf="@+id/DescriptionPt" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="30dp"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightMargin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="30dp"
+                tools:layout_constraintHorizontal_bias="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/AddNewItemBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="onClickAddNewItem"
+        android:text="@string/add_new_item_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ClearAllItemBtn"
+        app:layout_constraintHeight_min="wrap"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonMargin"
+        tools:layout_constrainedWidth="true" />
+
+    <Button
+        android:id="@+id/ClearAllItemBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:onClick="onClickClearAllItem"
+        android:text="@string/clear_all_item_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_min="wrap"
+        app:layout_constraintStart_toEndOf="@+id/AddNewItemBtn"
+        app:layout_constraintTop_toTopOf="@id/AddNewItemBtn" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttonMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
